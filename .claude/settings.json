@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write(notes/**)",
+      "Write(projects/**)",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Bash",
+      "WebFetch",
+      "WebSearch",
+      "mcp__*"
+    ]
+  },
+  "hooks": {
+    "postMessageSubmit": ".claude/hooks/log-message.sh"
+  }
+}
