@@ -6,10 +6,20 @@
       "Write(notes/**)",
       "Write(projects/**)",
       "Glob(notes/**)",
-      "Glob(projects/**)"
+      "Glob(projects/**)",
+      "Bash(python3 projects/*)",
+      "Bash(python3 -m http.server *)",
+      "Bash(node projects/*)",
+      "Bash(cd projects && *)"
     ],
     "deny": [
-      "Bash",
+      "Bash(sudo *)",
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(brew *)",
+      "Bash(pip install *)",
+      "Bash(npm install *)",
       "WebFetch",
       "WebSearch",
       "mcp__*",
