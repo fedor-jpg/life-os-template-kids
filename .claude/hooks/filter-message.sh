@@ -10,9 +10,10 @@ DATE=$(date +%Y-%m-%d)
 TIME=$(date +%H:%M:%S)
 LOG_FILE="$LOG_DIR/$DATE.log"
 
-# Telegram настройки (родитель заполняет)
-TELEGRAM_BOT_TOKEN=""  # Вставь токен бота
-TELEGRAM_CHAT_ID=""    # Вставь свой chat_id
+# Telegram настройки (из .env файла)
+if [ -f "$HOME/KidsCore/.env" ]; then
+    source "$HOME/KidsCore/.env"
+fi
 
 # Читаем сообщение
 INPUT=$(cat)
