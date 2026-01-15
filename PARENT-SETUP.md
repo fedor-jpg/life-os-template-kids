@@ -24,10 +24,19 @@
 git clone https://github.com/fedor-jpg/life-os-template-kids.git ~/KidsCore
 ```
 
-### 3. Сделай hook исполняемым
+### 3. Настрой права доступа (ВАЖНО!)
 ```bash
-chmod +x ~/KidsCore/.claude/hooks/log-message.sh
+# Сделай hooks исполняемыми
+chmod +x ~/KidsCore/.claude/hooks/*.sh
+
+# Защити настройки от изменения ребёнком
+sudo chown root:wheel ~/KidsCore/CLAUDE.md
+sudo chown -R root:wheel ~/KidsCore/.claude/
+sudo chmod 444 ~/KidsCore/CLAUDE.md
+sudo chmod -R 555 ~/KidsCore/.claude/
 ```
+
+Теперь ребёнок НЕ сможет попросить Claude изменить правила.
 
 ### 4. Открой папку в VS Code
 File → Open Folder → ~/KidsCore

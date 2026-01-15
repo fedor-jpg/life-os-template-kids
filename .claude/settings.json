@@ -1,20 +1,27 @@
 {
   "permissions": {
     "allow": [
-      "Read",
+      "Read(notes/**)",
+      "Read(projects/**)",
       "Write(notes/**)",
       "Write(projects/**)",
-      "Glob",
-      "Grep"
+      "Glob(notes/**)",
+      "Glob(projects/**)"
     ],
     "deny": [
       "Bash",
       "WebFetch",
       "WebSearch",
-      "mcp__*"
+      "mcp__*",
+      "Read(.claude/**)",
+      "Write(.claude/**)",
+      "Read(CLAUDE.md)",
+      "Write(CLAUDE.md)",
+      "Edit(.claude/**)",
+      "Edit(CLAUDE.md)"
     ]
   },
   "hooks": {
-    "postMessageSubmit": ".claude/hooks/log-message.sh"
+    "preMessageSubmit": ".claude/hooks/filter-message.sh"
   }
 }
